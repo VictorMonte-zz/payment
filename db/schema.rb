@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221032552) do
+ActiveRecord::Schema.define(version: 20180221034135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boleto_payments", force: :cascade do |t|
+    t.decimal "amount"
+    t.string "boleto_number"
+    t.integer "buyer_id"
+  end
 
   create_table "buyers", force: :cascade do |t|
     t.string "cpf"
@@ -34,6 +40,7 @@ ActiveRecord::Schema.define(version: 20180221032552) do
   create_table "credit_card_payments", force: :cascade do |t|
     t.decimal "amount"
     t.integer "buyer_id"
+    t.integer "card_id"
   end
 
   create_table "credit_payments", force: :cascade do |t|
