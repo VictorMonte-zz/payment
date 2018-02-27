@@ -1,0 +1,15 @@
+[33m7d25c71[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/create-payment[m[33m)[m Create boleto payment migration
+[33m76f465d[m Associate card to credit payment
+[33m42fcad8[m Associate buyer with credit payment
+[33m246488e[m Alter naming credit card payment
+[33m684c360[m Create credit payment model
+[33mc6cfd00[m Create credit payment migration
+[33mf3853af[m Alter ccv type
+[33m21c4823[m[33m ([m[1;31morigin/feature/create-payment[m[33m)[m Add association between card and buyer
+[33m95282ef[m Create card model
+[33m4d0a670[m Create card migration
+[33md3112f3[m Create buyer model
+[33ma9073a9[m Alter create buyers migration
+[33m84ef727[m Create buyer table migration
+[33m3827975[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mdevelop[m[33m)[m Set auth to pg
+[33m8fca5fd[m Initial commit
