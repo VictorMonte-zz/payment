@@ -7,7 +7,7 @@ class BuyersController < ApplicationController
    @buyer =  BuyerService.new(buyer_params).create
 
    if @buyer.valid?
-     render json: @buyer
+     head :ok
    else
      render json: @buyer.errors.full_messages, status: :bad_request
    end
