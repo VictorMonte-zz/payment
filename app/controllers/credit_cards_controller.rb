@@ -6,7 +6,7 @@ class CreditCardsController < ApplicationController
   def create
     @card = CreditCardService.new(credit_card_params).create(params[:cpf])
     if @card.valid?
-      head :ok
+      render json: @card.id, head: :ok
     else
       render json: @card.errors.full_messages, status: :bad_request
     end
