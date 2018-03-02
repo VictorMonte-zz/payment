@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227015452) do
+ActiveRecord::Schema.define(version: 20180301035806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boleto_payments", force: :cascade do |t|
-    t.decimal "amount"
     t.string "boleto_number"
-    t.integer "buyer_id"
-    t.integer "client_id"
+    t.bigint "payment_id"
+    t.index ["payment_id"], name: "index_boleto_payments_on_payment_id"
   end
 
   create_table "buyers", force: :cascade do |t|
@@ -42,10 +41,19 @@ ActiveRecord::Schema.define(version: 20180227015452) do
   end
 
   create_table "credit_card_payments", force: :cascade do |t|
-    t.decimal "amount"
-    t.integer "buyer_id"
     t.integer "card_id"
-    t.integer "client_id"
+    t.bigint "payment_id"
+    t.index ["payment_id"], name: "index_credit_card_payments_on_payment_id"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.text "payment_hash"
+    t.integer "status"
+    t.decimal "amount"
+    t.integer "client_id"
+    t.integer "buyer_id"
+  end
+
+  add_foreign_key "boleto_payments", "payments"
+  add_foreign_key "credit_card_payments", "payments"
 end
