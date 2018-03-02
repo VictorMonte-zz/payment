@@ -1,9 +1,9 @@
-class BuyerService
+class CreateBuyer
   def initialize(buyer)
     @buyer = buyer
   end
 
-  def create
+  def call
     Buyer.create(@buyer)
   end
 
