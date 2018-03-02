@@ -1,4 +1,4 @@
 module PaymentMethod
-  CREDITCARD = 1
-  BOLETO = 2
+  CREDITCARD = "CREDIT_CARD" 
+  BOLETO = "BOLETO"
 end
