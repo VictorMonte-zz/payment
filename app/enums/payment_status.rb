@@ -1,3 +1,3 @@
 module PaymentStatus
-  CREATED = 1
+  CREATED = "CREATED" 
 end

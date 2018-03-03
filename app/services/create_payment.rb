@@ -21,14 +21,19 @@ class CreatePayment
       Payment.new(
         status: PaymentStatus::CREATED,
         amount: params[:payment][:amount],
-        client_id: params[:client][:id])
+        client_id: params[:client][:id],
+        buyer_id: @buyer.id,
+        method: @method
+    )
+
 
   end
 
-  def create
+  def call
     ActiveRecord::Base.transaction do
       @payment.payment_hash = generate_payment_hash.call
       @payment.buyer_id = @buyer.id
+
         if @payment.save
 
           case @method
