@@ -56,4 +56,5 @@ ActiveRecord::Schema.define(version: 20180301035806) do
 
   add_foreign_key "boleto_payments", "payments"
   add_foreign_key "credit_card_payments", "payments"
+  add_foreign_key "credit_card_payments", "cards"
 end
