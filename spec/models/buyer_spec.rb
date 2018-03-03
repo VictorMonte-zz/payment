@@ -13,18 +13,18 @@ RSpec.describe Buyer, type: :model do
   end
 
   it "is not valid without a email" do
-    subject.email = nil
+    subject.email = " "
     expect(subject).to_not be_valid
   end
 
   it "is not valid without a name" do
-    subject.name = nil
+    subject.name = " "
     expect(subject).to_not be_valid
 
   end
 
   it "is not valid without a cpf" do
-    subject.cpf = nil
+    subject.cpf = " "
     expect(subject).to_not be_valid
   end
 
