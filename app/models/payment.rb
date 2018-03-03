@@ -7,5 +7,5 @@ class Payment < ActiveRecord::Base
 
   validates :amount, presence: true
   validates :client_id, presence: true
-  validates :hash, presence: true
+  validates :payment_hash, presence: true
 end
