@@ -1,6 +1,6 @@
-require_relative "../responses/get_payment_response"
+require_relative "../responses/status_payment_response"
 
-class GetPayment
+class GetStatusPayment
 
   def initialize(payment_hash)
     @payment_hash = payment_hash
@@ -16,7 +16,7 @@ class GetPayment
       @info = BoletoPayment.where(payment_id: @payment.id).first
     end
 
-    GetPaymentResponse.new(@payment, @info)
+    StatusPaymentResponse.new(@payment, @info)
   end
 
   private
