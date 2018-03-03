@@ -4,7 +4,7 @@ RSpec.describe BoletoPayment, type: :model do
   let(:client) { Client.create }
   let(:buyer) { Buyer.create(name: "Gandalf", cpf: "1234589751", email: "gandalf@mordor.com")  }
   let(:payment) { Payment.create(payment_hash: "PAY-123", status: 1, amount: 1000, client_id: client.id, buyer_id: buyer.id)  }
-  subject { BoletoPayment.create(boleto_number: "12345674546521", payment_id: payment.id) }
+  subject { described_class.create(boleto_number: "12345674546521", payment_id: payment.id) }
 
   it "is valid when valid parameters" do
     expect(subject).to be_valid
