@@ -49,12 +49,13 @@ ActiveRecord::Schema.define(version: 20180301035806) do
   create_table "payments", force: :cascade do |t|
     t.text "payment_hash"
     t.integer "status"
+    t.integer "method"
     t.decimal "amount"
     t.integer "client_id"
     t.integer "buyer_id"
   end
 
   add_foreign_key "boleto_payments", "payments"
-  add_foreign_key "credit_card_payments", "payments"
   add_foreign_key "credit_card_payments", "cards"
+  add_foreign_key "credit_card_payments", "payments"
 end
