@@ -25,10 +25,8 @@ class StatusPaymentResponse
   def create_credit_card_json
     { 
       :amount => @payment.amount, 
-      :status => @payment.status, 
-      :card => { 
-        :number => @info.number
-      } 
+      :status => @payment.status,
+      :method => @payment.method
     }
   end
   
@@ -36,6 +34,7 @@ class StatusPaymentResponse
     {
       :amount => @payment.amount,
       :status => @payment.status,
+      :method => @payment.method,
       :boleto => @info.boleto_number
     }
   end
