@@ -8,4 +8,7 @@ class Payment < ActiveRecord::Base
   validates :amount, presence: true
   validates :client_id, presence: true
   validates :payment_hash, presence: true
+
+  enum method: { CREDIT_CARD: 1, BOLETO: 2 }
+  enum status: { CREATED: 1 }
 end
