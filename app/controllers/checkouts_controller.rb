@@ -14,13 +14,12 @@ class CheckoutsController < ApplicationController
     end
 
     redirect_to action: "new"
+
   end
 
-end
+  private
 
-private
-
-def perform_checkout
-  perform_checkout ||= PerformCheckout.new(params, 1)
-end
+  def perform_checkout
+    perform_checkout ||= PerformCheckout.new(params, 1)
+  end
 end
