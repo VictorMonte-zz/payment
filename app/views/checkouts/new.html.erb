@@ -1,0 +1,133 @@
+<div class="container">
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="https://png.icons8.com/color/1600/darth-vader.png" alt="" width="72" height="72">
+    <h2>Checkout form</h2>
+  </div>
+
+  <%= form_for(@checkout, html: {multipart: true}) do |f| %>
+  <div class="row">
+    <div class="col-md-12 order-md-1">
+      <h4 class="mb-3">Buyer information</h4>
+      <%= fields_for :buyer, @checkout.buyer do |b| %>
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <label for="name">Full name</label>
+            <%= b.text_field :name, class: 'form-control' %>
+            <div class="invalid-feedback">
+              Please enter buyer name.
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="email">Email</label>
+            <%= b.text_field :email, class: 'form-control' %>
+            <div class="invalid-feedback">
+              Please enter a valid email for buyer.
+            </div>
+
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="cpf">CPF <span class="text-muted">(Only numbers)</span></label>
+            <%= b.text_field :cpf, class: 'form-control' %>
+            <div class="invalid-feedback">
+              Please enter buyer valid cpf.
+            </div>
+
+          </div>
+        <% end%>
+        </div>
+
+        <hr class="mb-4">
+
+        <h4 class="mb-3">Payment</h4>
+
+      <%= fields_for :payment, @checkout.payment do |p| %>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="amount">Amount</label>
+            <%= p.text_field :amount, class: 'form-control' %>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="paymentMethod">Payment Type</label>
+            <div class="custom-control custom-radio">
+              <input id="credit" name="paymentmethod" type="radio" class="custom-control-input" checked required>
+              <%= p.radio_button :method, 'CREDIT_CARD', class: "custom-control-input"  %>
+              <label class="custom-control-label" for="credit">Credit card</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="debit" name="paymentmethod" type="radio" class="custom-control-input" required>
+              <%= p.radio_button :method, 'BOLETO', class:"custom-control-input"  %>
+              <label class="custom-control-label" for="debit">Boleto</label>
+            </div>
+
+          </div>
+        </div>
+      <% end %>
+
+        <div name="creditCardForm">
+
+        <hr class="mb-4">
+
+        <h4 class="mb-3">Credit Card</h4>
+
+
+         <%= fields_for :credit_card, @checkout.credit_card do |c| %>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="cc-name">Name on card</label>
+              <%= c.text_field :holder_name, class: 'form-control' %>
+              <small class="text-muted">Full name as displayed on card</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="cc-number">Credit card number</label>
+              <%= c.text_field :number, class: 'form-control' %>
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <label for="cc-expiration">Expiration</label>
+              <%= c.text_field :expiration_date, class: 'form-control' %>
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="cc-expiration">CVV</label>
+              <%= c.text_field :cvv, class: 'form-control' %>
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+
+        <hr class="mb-4">
+        <!-- <button class="btn btn-primary btn-lg btn-block" type="submit" id="submit">Continue to checkout</button> -->
+        <%= f.submit( 'Efetuar pagamento', class: "btn btn-primary btn-lg btn-block") %>
+      </form>
+    </div>
+  </div>
+
+  <% end %>
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017-2018 Payment</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div> 
