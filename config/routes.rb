@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/payments/:hash/status', to: 'payments#status'
 
   get '/checkout', to:'checkouts#new'
+  get '/checkouts', to:'checkouts#new'
   post '/checkouts', to: 'checkouts#create'
 end

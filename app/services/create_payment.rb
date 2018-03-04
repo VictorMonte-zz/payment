@@ -7,7 +7,7 @@ require "generate_payment_hash"
 class CreatePayment
 
   def initialize(params)
-
+    byebug
     @buyer = Buyer.where(cpf: params[:buyer][:cpf]).first
 
     @client_id = params[:client][:id]
@@ -31,6 +31,7 @@ class CreatePayment
 
   def call
     ActiveRecord::Base.transaction do
+      byebug
       @payment.payment_hash = generate_payment_hash.call
       @payment.buyer_id = @buyer.id
 
