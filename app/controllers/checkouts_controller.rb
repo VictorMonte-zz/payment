@@ -1,7 +1,6 @@
 class CheckoutsController < ApplicationController
   def new
-    @checkout = Checkout.new()
-    @checkout.buyer ||= Buyer.new
+    @checkout = Checkout.new
   end
 
   def create

@@ -54,14 +54,12 @@
           <div class="col-md-6 mb-3">
             <label for="paymentMethod">Payment Type</label>
             <div class="custom-control custom-radio">
-              <input id="credit" name="paymentmethod" type="radio" class="custom-control-input" checked required>
-              <%= p.radio_button :method, 'CREDIT_CARD', class: "custom-control-input"  %>
-              <label class="custom-control-label" for="credit">Credit card</label>
+              <%= p.radio_button :method, 'CREDIT_CARD', class: "custom-control-input" %>
+              <label class="custom-control-label" for="payment_method_credit_card">Credit card</label>
             </div>
             <div class="custom-control custom-radio">
-              <input id="debit" name="paymentmethod" type="radio" class="custom-control-input" required>
-              <%= p.radio_button :method, 'BOLETO', class:"custom-control-input"  %>
-              <label class="custom-control-label" for="debit">Boleto</label>
+              <%= p.radio_button :method, 'BOLETO', class: "custom-control-input" %>
+              <label class="custom-control-label" for="payment_method_boleto">Boleto</label>
             </div>
 
           </div>
@@ -105,6 +103,7 @@
             <div class="col-md-3 mb-3">
               <label for="cc-expiration">CVV</label>
               <%= c.text_field :cvv, class: 'form-control' %>
+
               <div class="invalid-feedback">
                 Security code required
               </div>
