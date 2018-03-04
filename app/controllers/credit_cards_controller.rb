@@ -6,11 +6,11 @@ class CreditCardsController < ApplicationController
   def create
     @card = create_credit_card.call
 
-    if !@card.valid?
+    if @card.valid?
+      render json: @card.id, head: :ok
+    else
       render json: @card.errors.full_messages, status: :bad_request
     end
-
-    render json: @card.id, head: :ok
 
   end
 
