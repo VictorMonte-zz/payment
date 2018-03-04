@@ -1,0 +1,157 @@
+{
+	"id": "c69b619a-e2b4-cce4-8c86-436e07dd4d1a",
+	"name": "Payment",
+	"description": "",
+	"order": [
+		"906ce68a-e1bc-5795-dff2-eb7925efa8bd",
+		"0de6a352-80ac-feb2-d2f1-5a4f8f45c288",
+		"3110258f-6aac-5d6f-82f2-5cb04c304da2",
+		"e9e324c5-3b21-e7ca-b1d3-462f0de6ac0f",
+		"37c19d64-5c3f-9877-ee67-e308407700d7"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1519100385578,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "0de6a352-80ac-feb2-d2f1-5a4f8f45c288",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/buyers/44261175851/credit-cards/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520202535961,
+			"name": "http://localhost:3000/buyers/44261175851/credit-cards/",
+			"description": "Create card",
+			"collectionId": "c69b619a-e2b4-cce4-8c86-436e07dd4d1a",
+			"responses": [],
+			"rawModeData": "{\n\t\"card\": {\n\t\t\t\t\"holder_name\": \"BRUCE WAYNE\",\n\t\t\t\t\"number\": \"1234123412341234\",\n\t\t\t\t\"expiration_date\": \"2009-02-15T00:00:00Z\",\n\t\t\t\t\"cvv\": 123\n\t\t\t}\n}"
+		},
+		{
+			"id": "3110258f-6aac-5d6f-82f2-5cb04c304da2",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/payments",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520202563489,
+			"name": "http://localhost:3000/payments",
+			"description": "Create credit card payment",
+			"collectionId": "c69b619a-e2b4-cce4-8c86-436e07dd4d1a",
+			"responses": [],
+			"rawModeData": "{\n\t\"funding_instrument\": {\n\t\t\"client\": {\n\t\t\t\"id\": \"1\"\n\t\t},\n\t\t\"buyer\": {\n\t\t\t\"cpf\": \"11245569854\"\n\t\t},\n\t\t\"payment\":{\n\t\t\t\"method\": \"CREDIT_CARD\",\n\t\t\t\"amount\": 6000.19,\n\t\t\t\"credit_card\" : {\n\t\t\t\t\"id\" : 1\n\t\t\t}\n\t\t}\n\t}\n\t\n}"
+		},
+		{
+			"id": "37c19d64-5c3f-9877-ee67-e308407700d7",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/payments/PAY-91da1df/status",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520202586390,
+			"name": "http://localhost:3000/payments/PAY-5199140/status",
+			"description": "Get payment status",
+			"collectionId": "c69b619a-e2b4-cce4-8c86-436e07dd4d1a",
+			"responses": []
+		},
+		{
+			"id": "906ce68a-e1bc-5795-dff2-eb7925efa8bd",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/buyers",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520202522608,
+			"name": "http://localhost:3000/buyers",
+			"description": "Create buyers",
+			"collectionId": "c69b619a-e2b4-cce4-8c86-436e07dd4d1a",
+			"responses": [],
+			"rawModeData": "{ \n\t\"name\": \"Bruce Wayne\",\n\t\"email\": \"bruce@wayne.com\",\n\t\"cpf\": \"11245569854\"\n}"
+		},
+		{
+			"id": "e9e324c5-3b21-e7ca-b1d3-462f0de6ac0f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/payments",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520202572521,
+			"name": "http://localhost:3000/payments",
+			"description": "Create boleto payment",
+			"collectionId": "c69b619a-e2b4-cce4-8c86-436e07dd4d1a",
+			"responses": [],
+			"rawModeData": "{\n\t\"funding_instrument\": {\n\t\t\"client\": {\n\t\t\t\"id\": \"1\"\n\t\t},\n\t\t\"buyer\": {\n\t\t\t\"cpf\": \"11245569854\"\n\t\t},\n\t\t\"payment\":{\n\t\t\t\"method\": \"BOLETO\",\n\t\t\t\"amount\": 6000.19\n\t\t}\n\t}\n\t\n}"
+		}
+	]
+}

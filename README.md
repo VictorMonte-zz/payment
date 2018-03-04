@@ -1,24 +1,54 @@
-# README
+# Payment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Payment is an app to provide payment for customer and checkout.
+Only for study purpose, not ready for production.
 
-Things you may want to cover:
+# Features!
 
-* Ruby version
+  - Endpoints
+    - Create Buyers
+    - Create Credit Card
+    - Create Payments
+      - Credit
+      - Debit
 
-* System dependencies
+  - Página de Checkout
 
-* Configuration
+### Tech
 
-* Database creation
+  I choose this stack, because it's not my actual stack as a developer. My
+ background is mostly c#. The stack was compose by basic rails's stack, and 
+little bit of bootstrap to help me building the checkout page.
+  The architecture is based on MVC, but Service layer is used to avoid
+ fat controllers. RSpec gem is my right hand to make unit testing.
 
-* Database initialization
+  * Front end
+    * [Html, Css, Bootstrap 4] - web apps with responsible layout.
 
-* How to run the test suite
+  * Back end
+    * [Ruby on Rails] - OOP enterpreted language.
 
-* Services (job queues, cache servers, search engines, etc.)
+  * Database
+    * [Postgres] - relational DB
 
-* Deployment instructions
+### Installation
 
-* ...
+  Payment required last version of Ruby 2.5 and Rails 5.1.4.
+  ** Postgres must be running with a user, that can be configured in
+database.yml
+
+```sh
+$ cd payment
+$ bundle install
+$ rails server
+```
+
+### Todos
+
+  - Write more tests
+  - Use more rails fetch
+  - Alter instance for class methods
+  - Less verbal services
+  - Duck type
+  - Avoid compositions
+
