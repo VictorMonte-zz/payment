@@ -6,11 +6,11 @@ class BuyersController < ApplicationController
   def create
     @buyer = create_buyer.call
 
-    if !@buyer.valid?
+    if @buyer.valid?
+      head :ok
+    else
       render json: @buyer.errors.full_messages, status: :bad_request
     end
-
-    head :ok
   end
 
   private
